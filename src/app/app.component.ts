@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  //imports: [TopBarComponent]
 })
 export class AppComponent {
   title = 'blogger-box-frontend';
