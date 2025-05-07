@@ -8,7 +8,9 @@ export interface Post {
     category: Category;
 }
 
-export type PostCreateInput = Omit<Post, 'id'>;
+//export type PostCreateInput = Omit<Post, 'id'>;
+export type PostCreateInput = Omit<Post, 'id' | 'category' | 'createdDate'> & { categoryId: string };
+
 
 export const POSTS = [
     {

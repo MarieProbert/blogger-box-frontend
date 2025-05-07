@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Post } from '../data/post';
+import { Post, PostCreateInput } from '../data/post';
 import { environment } from '../environment/environment';
 
 @Injectable({
@@ -21,11 +21,11 @@ export class PostService {
     return this.http.get<Post>(`${this.baseUrl}/${id}`);
   }
 
-  getPostsByCategoryId(categoryId: string): Observable<Post[]> {
+  getPostsByCategoryId(categoryId: string): Observable<Post[]> { //not sure if this is correct
     return this.http.get<Post[]>(`${this.baseUrl}/category/${categoryId}`);
   }
 
-  createPost(post: Post): Observable<void> {
+  createPost(post: PostCreateInput): Observable<void> {
     return this.http.post<void>(`${this.baseUrl}`, post);
   }
 
